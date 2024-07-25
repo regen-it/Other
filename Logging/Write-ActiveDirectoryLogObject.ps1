@@ -1,4 +1,4 @@
-#Template used for object based loggin in Active Directory based unattended scripts
+#Template used for object based logging in Active Directory based unattended scripts
 function Write-ActiveDirectoryLogLobject {
 <#
 .SYNOPSIS
