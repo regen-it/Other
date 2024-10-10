@@ -9,7 +9,7 @@ function Write-ActiveDirectoryLogLobject {
     Write-ActiveDirectoryLogObject -Action SetUser -LogMessage -Result Success -User $user.SamAccountName -LogError $null
 .NOTES
     Author: jethro@regenit.cloud / https://github.com/regen-it
-    Version: 0.1
+    Version: 1.0
 #>
     Param (
         [Parameter(Mandatory=$true)]
@@ -24,6 +24,7 @@ function Write-ActiveDirectoryLogLobject {
         [string]$logError = ($Error | Select-Object -First 1 -ExpandProperty Exception).Message
     )
     $logObject = [PSCustomObject]@{
+        Time = Get-Date -Format "HHmm ddMMyy"
         Action = $action
         LogMessage = $logMessage
         Result = $result
